@@ -3,4 +3,45 @@ html {
 }
 body {
     background: black;
+    color: white;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.main {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 5px;
+}
+.gridItem {
+    border: 1px solid white;
+    text-align: center;
+    padding: 30px;
+    transition: 200ms;
+    cursor: pointer;
+}
+#display {
+    cursor: initial;
+    background: black !important;
+    color: white !important;
+}
+.gridItem:hover {
+    transition: 200ms;
+    color: black;
+    background: white;
+    box-shadow: 0 4px 20px rgba(230, 229, 229, 0.901);
+}
+/*Create a hover class to append it to JS*/
+.hoverClass {
+    color: black;
+    background: white;
+    box-shadow: 0 4px 20px rgba(230, 229, 229, 0.901);
+}
+
+#display {
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
