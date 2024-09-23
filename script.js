@@ -70,6 +70,15 @@ function deleteNum() {
 }
 deleteButton.addEventListener('click', deleteNum); // Event listener for when delete button works
 
+// main calc function
+function calc() {
+    try {
+        display.textContent = eval(display.textContent);
+    } catch (error) {
+        display.textContent = "Error";
+    }
+}
+
 document.addEventListener('keydown', (e) => {
     const key = e.key;
     if (!isNaN(key) && key >=0 && key <= 9) {
@@ -86,7 +95,7 @@ document.addEventListener('keydown', (e) => {
 
     } else if (key === 'Enter') {
         e.preventDefault();
-        console.log('ENTER PRESSED. CALC() FUCTION MISSING.');
+        calc();
     } else if (key === 'Backspace') {
         e.preventDefault();
         deleteNum();
